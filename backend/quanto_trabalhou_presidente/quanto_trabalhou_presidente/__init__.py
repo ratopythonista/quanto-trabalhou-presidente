@@ -1,7 +1,10 @@
+__version__ = "0.0.1"
+
+
 import uuid
 import time
 import traceback
-from importlib_metadata import version  # PYTHON < 3.8
+from importlib.metadata import version  # PYTHON >= 3.8
 
 from loguru import logger
 from fastapi import FastAPI
@@ -19,7 +22,7 @@ from quanto_trabalhou_presidente.exceptions import QuantoTrabalhouPresidenteExce
 app = FastAPI(
     title="Quanto Trabalhou o Presidente?",
     description=DESCRIPTION,
-    version=version(__name__),
+    version=__version__,
     docs_url="/swagger",
     redoc_url="/docs"
 )
